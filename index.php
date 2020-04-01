@@ -7,6 +7,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
@@ -43,8 +44,8 @@
                         <td><?php echo $row['name']; ?></td>
                         <td><?php echo $row['location']; ?></td>
                         <td>
-                            <a href="index.php?edit=<?php echo $row['id']; ?>" class="btn btn-info">Edit</a>
-                            <a href="index.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a>
+                            <a href="index.php?edit=<?php echo $row['id']; ?>" class="btn btn-info"><i class="far fa-edit"> Edit</i></a>
+                            <a href="index.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger"><i class="far fa-trash-alt"> Delete</i></a>
                         </td>
                     </tr>
                 <?php endwhile; ?>
@@ -61,7 +62,7 @@
         <div class="row justify-content-center"></div>
             <form action="process.php" method="post">
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
-                
+
                 <div class="form-group">
                     <label for="">Name</label>
                     <input type="text" class="form-control" name="name" value="<?php echo $name; ?>" placeholder="Enter your name">
@@ -72,9 +73,9 @@
                 </div>
                     <div class="form-group">
                     <?php if($update == true): ?>
-                        <button type="submit" class="btn btn-info" name="update">Update</button>
+                        <button type="submit" class="btn btn-info" name="update"><i class="fas fa-pencil-alt"> Update</i></button>
                     <?php else: ?>
-                        <button type="submit" class="btn btn-primary" name="save">Save</button>
+                        <button type="submit" class="btn btn-primary" name="save"><i class="far fa-save"> Save</i></button>
                     <?php endif; ?>
                 </div>
             </form>
